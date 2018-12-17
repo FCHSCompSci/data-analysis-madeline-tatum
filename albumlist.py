@@ -1,5 +1,6 @@
 import csv
 from matplotlib import pyplot as plt
+import collections
 
 filename = 'albumlist.csv'
 with open(filename) as f:
@@ -34,6 +35,9 @@ with open(filename) as f:
     for row in reader:
         subgenres.append(row[5])
 
-fig = plt.figure(dpi=128, figsize=(10, 6))
-plt.bar(numbers, height=500)
-plt.show()
+c = collections.Counter(artists)
+print(collections.Counter(artists).most_common(3))
+
+# fig = plt.figure(dpi=126, figsize=(10, 6))
+# plt.bar(numbers, height=500)
+# plt.show()
