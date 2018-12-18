@@ -36,4 +36,3 @@ plt.xlabel("Artist", fontsize=14)
 plt.ylabel("Frequency of artist", fontsize=14)
 plt.show()
 
-fig = plt.figure(dpi=126, figsize=(10, 6))
