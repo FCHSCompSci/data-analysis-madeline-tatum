@@ -12,32 +12,28 @@ with open(filename) as f:
         print(index, column_header)
 
     numbers = []
-    for row in reader:
-        numbers.append(row[0])
-
     years = []
-    for row in reader:
-        years.append(row[1])
-
     albums = []
-    for row in reader:
-        albums.append(row[2])
-
     artists = []
-    for row in reader:
-        artists.append(row[3])
-
     genres = []
-    for row in reader:
-        genres.append(row[4])
-
     subgenres = []
     for row in reader:
+        numbers.append(row[0])
+        years.append(row[1])
+        albums.append(row[2])
+        artists.append(row[3])
+        genres.append(row[4])
         subgenres.append(row[5])
 
-c = collections.Counter(artists)
-print(collections.Counter(artists).most_common(3))
+mc_artists = collections.Counter(artists).most_common(10)
+print(mc_artists)
 
-# fig = plt.figure(dpi=126, figsize=(10, 6))
-# plt.bar(numbers, height=500)
-# plt.show()
+x = ['The Beatles','Bob Dylan','The Rolling Stones','Bruce Springsteen','The Who','U2','Led Zeppelin','David Bowie','Radiohead','Elton John']
+y = [10,10,10,8,7,5,5,5,5,5]
+plt.plot(x,y)
+plt.title("Most Common Artists", fontsize=24)
+plt.xlabel("Artist", fontsize=14)
+plt.ylabel("Frequency of artist", fontsize=14)
+plt.show()
+
+fig = plt.figure(dpi=126, figsize=(10, 6))
